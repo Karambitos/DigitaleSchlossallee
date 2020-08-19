@@ -1,0 +1,45 @@
+/**
+ *  Global elements
+ */
+
+$primary: #294973;
+$text: #525659;
+$white: #ffffff;
+$dark: #090d15;
+$black: #000;
+
+html,
+body{
+    font-family: OpenSans;
+    font-size: 16px;
+    font-weight: 300;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.75;
+    letter-spacing: 0.89px;
+    color: #000000;
+    box-sizing: border-box;
+}
+
+ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+main{
+    margin-top: 109px;
+}
+
+.wrapper{
+    max-width: 1290px;
+    padding: 0 25px;
+    margin: auto;
+    box-sizing: border-box;
+}
+
+ // <--------- Describe styles of your global elements, e.g. buttons, forms, fields, etc here --------->

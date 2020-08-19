@@ -1,0 +1,33 @@
+@import "fonts";
+@import "mixins";
+@import "vars";
+@import "typo";
+@import "grids";
+@import "mixins";
+@import "modals";
+@import "spiner";
+
+
+/**components*/
+@import "components/header";
+@import "components/video";
+@import "components/slider";
+//@import "components/text-section";
+//@import "components/swiped-picture";
+//@import "components/slider";
+//@import "components/text-picture";
+//@import "components/banner";
+//@import "components/accordion";
+//@import "components/form";
+//@import "components/footer";
+//@import "components/innerpage";
+
+/**
+ *  Reset defaults
+ */
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+

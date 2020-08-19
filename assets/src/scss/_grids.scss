@@ -1,0 +1,95 @@
+/**
+ *  Grids generator.
+ *
+ *  @author   Luke Kortunov
+ *  @version  1.0
+ */
+$highlight_grids:           false;  // true|false
+$col_number:                12; // int
+
+$desktop_container_width:   1200px;
+$desktop_container_padding: 0;
+
+$desktop_col_gap:           15px;
+$desktop_row_width:         $desktop_container_width - ( $desktop_container_padding * 2 );
+$desktop_col_width:         $desktop_row_width / $col_number;
+
+$tablet_container_width:    1200px;
+$tablet_container_padding:  10px;
+$tablet_col_gap:            10px;
+$tablet_row_width:          $tablet_container_width - ( $tablet_container_padding * 2 );
+$tablet_col_width:          $tablet_row_width / $col_number;
+
+$mobile_container_width:    calc( 100% - 20px );
+$mobile_container_padding:  10px;
+$mobile_col_gap:            10px;
+$mobile_row_width:          100%;
+$mobile_col_width:          100%;
+
+.container {
+    margin: 0 auto;
+    box-sizing: border-box;
+    width: $desktop_container_width;
+    padding: 0 $desktop_container_padding;
+    max-width: 100%;
+    @if $highlight_grids == true {
+        background: rgba( 0,0,0,.25 );
+    }
+    @media all and (max-width: 1200px){
+        width: $tablet_container_width;
+        padding: 0 $tablet_container_padding;
+    }
+    @media all and (max-width: 980px){
+        width: $mobile_container_width;
+        padding: 0 $mobile_container_padding;
+    }
+    .row {
+        display: flex;
+        flex-grow: 0;
+        flex-shrink: 0;
+        width: $desktop_row_width;
+        max-width: 100%;
+        @if $highlight_grids == true {
+            background: rgba( 0,0,0,.25 );
+        }
+        @media all and (max-width: 1200px){
+            width: $tablet_row_width;
+        }
+        @media all and (max-width: 767px){
+            flex-direction: column;
+            width: $mobile_row_width
+        }
+        .col {
+            width: $desktop_col_width;
+            padding: 0 $desktop_col_gap;
+            box-sizing: border-box;
+            @if $highlight_grids == true {
+                background: rgba( 0,0,0,.1 );
+                &:nth-of-type(2n){
+                    background: rgba( 0,0,0,.25 );
+                }
+            }
+            @media all and (max-width: 1200px){
+                width: $tablet_col_width;
+                padding: 0 $tablet_col_gap;
+            }
+            @media all and (max-width: 980px){
+                width: $mobile_col_width;
+                padding: 0 $mobile_col_gap;
+            }
+            @for $i from 1 through $col_number {
+                &.col-#{$i} {
+                    width: $desktop_col_width * $i;
+                    @media all and (max-width: 1200px){
+                        width: $tablet_col_width * $i;
+                        padding: 0 $tablet_col_gap;
+                    }
+                    @media all and (max-width: 767px){
+                        width: $mobile_col_width;
+                        padding: 0 $mobile_col_gap;
+                    }
+                }
+            }
+        }
+    }
+}
