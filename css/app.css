@@ -943,6 +943,10 @@ main {
   background-repeat: no-repeat;
 }
 
+.slider .slider--box .swiper-slide img {
+  width: 100%;
+}
+
 .slider .text {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;

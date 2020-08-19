@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="./css/app.css">
     <link rel="stylesheet" href="./assets/src/js/fancybox/jquery.fancybox.min.css">
     <link rel="stylesheet" href="./assets/src/js/swiper/swiper.min.css">
-    <title>Document</title>
+    <title>Digitale Schlossallee</title>
 </head>
 <body>
 <?php require_once 'header.php'?>
