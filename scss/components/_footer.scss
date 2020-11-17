@@ -1,0 +1,167 @@
+footer {
+    margin: 130px 0 0;
+    padding: 0;
+    background: linear-gradient(0deg,
+            rgba(2, 0, 36, 1) 0%,
+            rgba(41, 73, 115, 1) 39%,
+            rgba(41, 73, 115, 1) 100%);
+
+    .wrapper {
+        overflow: visible;
+    }
+
+    .footer__container {
+        display: flex;
+
+        @include respond-to("tablet") {
+            flex-wrap: wrap;
+        }
+
+        .picture {
+            position: relative;
+            margin: 0 50px;
+            transform: translateY(-58px);
+
+            @include respond-to("tablet") {
+                margin: 0;
+            }
+
+            &-box {
+                width: 389px;
+                height: 389px;
+
+                @include respond-to("tablet") {
+                    height: auto;
+                    width: 100%;
+                }
+            }
+
+            img {
+                display: block;
+                border-radius: 10px;
+                width: 100%;
+            }
+        }
+
+        .text {
+            font-weight: 400;
+            padding: 35px 0 40px 0;
+            box-sizing: border-box;
+            position: relative;
+            color: $white;
+
+            @include respond-to("tablet") {
+                padding-top: 0;
+            }
+
+            .title {
+                max-width: 467px;
+                font-family: "OpenSans-LightItalic";
+                font-size: 48px;
+                font-weight: 300;
+                font-stretch: normal;
+                font-style: italic;
+                line-height: 1.33;
+                letter-spacing: 2.68px;
+                margin-bottom: 35px;
+
+                @include respond-to("tablet") {
+                    font-size: 32px;
+                }
+            }
+
+            .text-box {
+                font-family: "OpenSans-Regular";
+            }
+
+            .participants-list {
+                font-family: "OpenSans-SemiBold";
+
+                a {
+                    font-family: "OpenSans-SemiBold";
+
+                    color: white;
+                }
+            }
+
+            .subscription {
+                display: flex;
+                margin: 50px 0 10px 0;
+
+                @include respond-to("tablet__l") {
+                    flex-wrap: wrap;
+                    justify-content: center;
+                }
+
+                input {
+                    font-family: "OpenSans-LightItalic";
+                    font-style: italic;
+
+                    -webkit-appearance: none;
+                    -moz-appearance: none;
+                    appearance: none;
+
+                    @include animate(all);
+                    padding: 0 19px;
+                    color: $white;
+                    width: 317px;
+                    height: 48px;
+                    border-radius: 10px;
+                    border: 1px solid $white;
+                    background-color: transparent;
+
+                    @include respond-to("xs") {
+                        width: 234px;
+                    }
+
+                    &:focus,
+                    &:active,
+                    &:hover {
+                        @include animate(all);
+                        outline: none;
+                    }
+                }
+
+                input::placeholder {
+                    font-family: "OpenSans-Light", sans-seri;
+                    font-size: 16px;
+                    font-style: italic;
+                    line-height: 1;
+                    color: $white;
+                    overflow: visible;
+                }
+            }
+
+            .button {
+                margin: 35px 0 10px;
+            }
+        }
+    }
+
+    .footer-nav {
+        border-top: 1px solid $white;
+
+        &--item {
+            display: flex;
+            flex-wrap: wrap;
+
+            li {
+                margin-right: 40px;
+                padding: 20px 0;
+
+                @include respond-to("xs") {
+                    margin-right: 0;
+                    width: 100%;
+                    text-align: center;
+                }
+            }
+
+            a,
+            li {
+                font-size: 12px;
+                letter-spacing: 0.67px;
+                color: $white;
+            }
+        }
+    }
+}

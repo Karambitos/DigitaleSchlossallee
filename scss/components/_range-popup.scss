@@ -1,0 +1,307 @@
+.range {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding-top: 140px;
+  flex-wrap: wrap;
+
+  &__right-col {
+    margin-right: 169px;
+
+    @include respond-to("tablet__l") {
+      margin: auto;
+    }
+
+    .range--card:first-child {
+      margin-top: 124px;
+    }
+  }
+
+  &__left-col {
+    .range--card {
+      @include respond-to("tablet__l") {
+        margin: auto;
+      }
+    }
+  }
+
+  &__left-col,
+  &__right-col {
+    @include respond-to("tablet__l") {
+      margin: auto;
+    }
+
+    .range--card {
+      @include respond-to("tablet__l") {
+      }
+    }
+  }
+
+  &--card {
+    position: relative;
+    max-width: 400px;
+    margin-bottom: 142px;
+
+    @media screen and (max-width: 800px) {
+      border-radius: 10px;
+    }
+
+    .card-image-box {
+      position: absolute;
+      width: 370px;
+      height: 374px;
+      top: -35px;
+      right: -180px;
+      border: none;
+
+      @media screen and (max-width: 800px) {
+        position: static;
+        width: auto;
+        background-color: #f7f7f7;
+        width: auto;
+        height: auto;
+        border: none;
+      }
+    }
+
+    .card-image {
+      border-radius: 10px;
+      width: 100%;
+
+      @media screen and (max-width: 800px) {
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 0;
+      }
+    }
+  }
+
+  &--text {
+    max-width: 445px;
+    padding-left: 142px;
+    margin-bottom: 257px;
+
+    @include respond-to("tablet__l") {
+      max-width: 100%;
+      margin-bottom: 100px;
+      padding: 100px;
+    }
+
+    @media screen and (max-width: 800px) {
+      padding: 0;
+    }
+  }
+
+  &--text-title {
+    font-family: "OpenSans-Bold";
+    color: $primary;
+    font-size: 28px;
+    line-height: normal;
+    letter-spacing: 1.56px;
+  }
+
+  &--text-box {
+    max-width: 442px;
+    margin-left: 142px;
+  }
+
+  &--card-box {
+    background-color: #f7f7f7;
+    padding: 82px 30px 45px;
+    border: none;
+
+    @media screen and (max-width: 800px) {
+      padding: 25px 25px 50px;
+    }
+  }
+
+  &--title-box {
+    max-width: 170px;
+    font-size: 28px;
+    line-height: 0.96;
+    letter-spacing: 1.56px;
+    color: $primary;
+    margin-bottom: 220px;
+
+    @media screen and (max-width: 800px) {
+      max-width: 100%;
+      margin-bottom: 40px;
+    }
+  }
+
+  &--title {
+    font-weight: 300;
+    margin-top: 0;
+    margin-bottom: 10px;
+  }
+
+  &--sub-title {
+    font-family: "OpenSans-SemiBold";
+  }
+
+  &--content-box {
+    font-size: 14px;
+    line-height: 1.64;
+    letter-spacing: 0.78px;
+
+    p {
+      margin: 20px 0;
+    }
+
+    .button {
+      font-size: 16px;
+      line-height: 1.5;
+      letter-spacing: 0.89px;
+    }
+  }
+}
+
+.open-content.open {
+  .text {
+    background-color: $primary;
+  }
+}
+
+.popup-container {
+  background-color: $primary;
+  position: relative;
+  padding-bottom: 190px;
+
+  @include respond-to("tablet__s") {
+    padding-bottom: 40px;
+  }
+
+  a {
+    color: $text;
+    cursor: pointer;
+
+    &:hover {
+      color: $white;
+    }
+  }
+
+  .text-title {
+    margin-bottom: 0;
+  }
+
+  .text-title + p {
+    margin-top: 0;
+  }
+
+  .text-font {
+    font-size: 13px;
+  }
+
+  .title,
+  .picture,
+  .popup-container-cards {
+    max-width: 1220px;
+    padding: 0 25px;
+    margin: auto;
+  }
+
+  .title {
+    padding: 25px 25px 15px;
+    color: $white;
+
+    h2 {
+      font-family: "OpenSans-SemiBold";
+      font-size: 28px;
+      letter-spacing: 1.56px;
+    }
+
+    p {
+      max-width: 867px;
+      margin-bottom: 29px;
+    }
+  }
+
+  .picture {
+    padding: 50px 25px 45px;
+  }
+
+  img {
+    width: 100%;
+    border-radius: 10px;
+    min-height: 300px;
+    object-fit: cover;
+  }
+
+  &-cards {
+    max-width: 1170px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-basis: calc((100% - 3 * 25px) / 4);
+    padding: 0 0 190px;
+
+    @include respond-to("tablet__s") {
+      justify-content: space-around;
+    }
+
+    @include respond-to("phone") {
+      padding: 0 0 90px;
+    }
+  }
+
+  .card {
+    border: 1px solid;
+    width: 273px;
+    height: 223px;
+    border-radius: 20px;
+    border: solid 1px $white;
+    margin-right: 23px;
+    margin-bottom: 25px;
+
+    @include respond-to("tablet") {
+      margin: 0 10px 25px;
+    }
+
+    @media screen and (max-width: 640px) {
+      margin: 0 0 25px;
+      width: 100%;
+    }
+
+    &-box {
+      color: $white;
+      padding: 35px 32px 18px;
+      font-size: 14px;
+      letter-spacing: 0.78px;
+
+      h3 {
+        font-family: "OpenSans-SemiBold";
+        font-size: 14px;
+      }
+
+      .card-item {
+        font-family: "OpenSans-Regular";
+      }
+    }
+  }
+
+  .card:nth-child(4n + 4) {
+    @media screen and (min-width: 1217px) {
+      margin-right: 0;
+    }
+  }
+
+  .card:last-child {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    margin-right: 0;
+  }
+}
+
+.workshop-popup {
+  color: $white;
+  padding: 120px 25px 120px;
+
+  ul {
+    list-style: disc;
+  }
+}

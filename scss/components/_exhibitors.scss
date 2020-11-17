@@ -1,0 +1,213 @@
+.exhibitors {
+  margin: 40px 0 145px;
+
+  @include respond-to("xs") {
+    margin-bottom: 40px;
+  }
+
+  &-section-title {
+    font-family: "OpenSans-Bold";
+    font-size: 36px;
+    line-height: 1.36;
+    letter-spacing: 2.01px;
+    color: $primary;
+    text-align: center;
+    margin-bottom: 65px;
+  }
+
+  &-list {
+    display: flex;
+    flex-wrap: wrap;
+
+    @include respond-to("medium") {
+      justify-content: space-around;
+    }
+  }
+
+  &-item {
+    width: 390px;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 0 9px 0 rgba(168, 168, 168, 0.5);
+    border: solid 1px $primary;
+    background-color: $white;
+    margin-bottom: 40px;
+    margin-right: 35px;
+    box-sizing: border-box;
+
+    @include respond-to("medium") {
+      margin-right: 20px;
+    }
+
+    @include respond-to("phone") {
+      margin-right: 0;
+    }
+  }
+
+  &-item:nth-child(3n) {
+    margin-right: 0;
+
+    @include respond-to("medium") {
+      margin-right: 20px;
+    }
+
+    @include respond-to("phone") {
+      margin-right: 0;
+    }
+  }
+
+  &--box {
+    padding: 66px 42px 54px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    box-sizing: border-box;
+
+    p {
+      font-family: "OpenSans-Light";
+      font-size: 14px;
+      line-height: 1.64;
+      letter-spacing: 0.78px;
+    }
+
+    .exhibitors--content-box {
+      ul {
+        list-style: disc;
+
+        li {
+          margin-left: 20px;
+        }
+      }
+    }
+  }
+
+  &--logo {
+    width: 204px;
+    min-height: 212px;
+    margin: 0 auto 66px;
+    display: flex;
+    align-items: center;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  &--title {
+    font-family: "OpenSans-SemiBold";
+    font-size: 28px;
+    line-height: 1.4;
+    letter-spacing: 1.56px;
+    color: $primary;
+  }
+}
+
+.exhibitors-registr {
+  transform: translateX(100px);
+  margin-bottom: 216px;
+  background: transparent;
+
+  @include respond-to("large") {
+    transform: translateX(0);
+    margin-bottom: 140px;
+  }
+
+  @include respond-to("xs") {
+    margin-bottom: 40px;
+  }
+
+  .exhibitors-container {
+    position: relative;
+  }
+
+  .exhibitors-wrapper {
+    max-width: 1440px;
+    padding: 0;
+    margin: auto;
+  }
+
+  .exhibitors-picture {
+    display: block;
+    margin-left: auto;
+    max-width: 961px;
+
+    @include respond-to("phone") {
+      display: none;
+    }
+
+    &--box {
+      display: flex;
+      align-items: stretch;
+      height: 648px;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: 50% 50%;
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+
+        @include respond-to("tablet__s") {
+          border-top-left-radius: 0;
+          border-bottom-left-radius: 0;
+        }
+      }
+    }
+  }
+
+  .exhibitors-container--text {
+    position: absolute;
+    left: -120px;
+    top: 115px;
+    background-color: $primary;
+    box-sizing: border-box;
+    padding: 17px 50px 62px;
+
+    max-width: 720px;
+    width: 100%;
+
+    color: $white;
+
+    @include respond-to("large") {
+      left: 0px;
+    }
+
+    @include respond-to("tablet__l") {
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    @include respond-to("phone") {
+      position: static;
+      transform: translate(0px, 0px);
+      padding: 60px 40px 75px;
+      max-width: initial;
+    }
+
+    @include respond-to("xs") {
+      padding: 60px 20px 75px;
+    }
+
+    .title {
+      font-family: "OpenSans-Bold";
+      font-size: 34px;
+      line-height: 1.35;
+      letter-spacing: 1.9px;
+      margin-bottom: 33px;
+
+      @include respond-to("phone") {
+        font-size: 24px;
+      }
+
+      @include respond-to("xs") {
+        font-size: 18px;
+      }
+    }
+
+    p {
+      margin: 20px 0;
+    }
+  }
+}

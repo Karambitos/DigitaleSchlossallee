@@ -1,0 +1,233 @@
+.cards {
+
+    .cards__row {
+        display: flex;
+        flex-wrap: wrap;
+        padding-left: 149px;
+
+        @include respond-to('laptop') {
+            padding-left: 100px;
+        }
+
+        @include respond-to('medium') {
+            padding-left: 50px;
+        }
+
+        @include respond-to('tablet__l') {
+            padding-left: 0;
+        }
+
+        .card {
+            position: relative;
+            width: 504px;
+
+            height: fit-content;
+            margin-bottom: 41px;
+
+            @include respond-to('tablet__l') {
+                width: 100%;
+                max-width: 704px;
+            }
+
+            &--box {
+                position: relative;
+                border-radius: 20px;
+                box-shadow: 0 0 9px 0 rgba(168, 168, 168, 0.5);
+                border: solid 1px $primary;
+                background-color: $white;
+                padding: 51px 43px 31px 92px;
+
+                @include respond-to('phone') {
+                    padding: 40px;
+                }
+            }
+
+            &--title-box {
+                position: relative;
+
+                @include respond-to('phone') {
+                    margin-left: 80px;
+                }
+
+                @include respond-to('xs') {
+                    margin-left: 0;
+                }
+
+                .card--title {
+                    font-size: 18px;
+                    font-family: 'OpenSans-Regular';
+                    line-height: 1.44;
+                    letter-spacing: 1px;
+                    margin-top: 0;
+                }
+
+                .card--sub-title {
+                    font-size: 18px;
+                    font-family: 'OpenSans-SemiBold';
+
+                    @include respond-to('xs') {
+                        margin-left: 75px;
+                        display: flex;
+                        min-height: 60px;
+                        align-items: center;
+                    }
+                }
+
+                .icon {
+                    position: absolute;
+                    display: inline-block;
+                    width: 52px;
+                    height: 52px;
+                    border: 1px solid $primary;
+                    border-radius: 50%;
+                    top: -25px;
+                    left: -62px;
+
+                    @include respond-to('phone') {
+                        top: 0;
+                        left: -72px;
+                    }
+
+                    @include respond-to('xs') {
+                        left: 10px;
+                    }
+
+                    &:before {
+                        font-size: 55px;
+                    }
+                }
+            }
+
+            &--text {
+                font-size: 21px;
+                font-family: 'OpenSans-LightItalic';
+                line-height: 1.81;
+                letter-spacing: 1.17px;
+
+                @include respond-to('xs') {
+                    font-size: 16px;
+                }
+            }
+        }
+
+        .cards__left-col,
+        .cards__right-col {
+            @include respond-to('tablet__l') {
+                margin: auto;
+            }
+        }
+
+        .cards__left-col {
+            .card:nth-child(2n) {
+                margin-left: 75px;
+
+                @include respond-to('tablet__s') {
+                    margin-left: 0;
+                }
+            }
+
+            .card:nth-child(odd) {
+                &:before {
+                    position: absolute;
+                    content: '';
+                    display: block;
+                    width: 83px;
+                    height: 83px;
+                    opacity: 0.06;
+                    border-radius: 50%;
+                    background-color: $primary;
+
+                    right: -50px;
+                    top: 169px;
+                }
+            }
+
+            .card:nth-child(even) {
+                &:before {
+                    position: absolute;
+                    content: '';
+                    display: block;
+                    width: 160px;
+                    height: 160px;
+                    opacity: 0.42;
+                    border-radius: 50%;
+                    background-color: $primary;
+
+                    right: -100px;
+                    top: 120px;
+                }
+            }
+        }
+
+        .cards__right-col {
+            position: relative;
+
+            @include respond-to('tablet__l') {
+                .card:nth-child(2n) {
+                    margin-left: 75px;
+                }
+            }
+
+            @include respond-to('tablet__s') {
+                .card:nth-child(2n) {
+                    margin-left: 0;
+                }
+            }
+
+            &:before {
+                position: absolute;
+                content: '';
+                display: block;
+                width: 46px;
+                height: 46px;
+                opacity: 0.42;
+                border-radius: 50%;
+                background-color: $primary;
+
+                top: -40px;
+                right: 40%;
+            }
+
+            .card {
+                margin-left: auto;
+                margin-top: 250px;
+                transform: translateX(40px);
+
+                @include respond-to('tablet__l') {
+                    margin-left: 0;
+                    margin-top: 0;
+                    transform: translateX(0);
+                }
+
+                &:before {
+                    position: absolute;
+                    content: '';
+                    display: block;
+                    width: 83px;
+                    height: 83px;
+                    opacity: 0.23;
+                    border-radius: 50%;
+                    background-color: $primary;
+
+                    right: 128px;
+                    bottom: -40px;
+                }
+
+                &:after {
+                    position: absolute;
+                    content: '';
+                    display: block;
+                    width: 83px;
+                    height: 83px;
+                    opacity: 0.06;
+                    border-radius: 50%;
+                    background-color: $primary;
+
+                    right: 224px;
+                    bottom: -217px;
+                }
+            }
+        }
+    }
+
+}

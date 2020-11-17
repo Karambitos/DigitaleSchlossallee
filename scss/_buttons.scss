@@ -1,0 +1,135 @@
+button,
+.button {
+    font-family: 'OpenSans-Light',
+        sans-seri;
+
+    @include animate(all);
+    cursor: pointer;
+    position: relative;
+    background-color: transparent;
+    color: $primary;
+    padding: 12px 23px;
+    font-size: 16px;
+    font-weight: 300;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.5;
+    letter-spacing: 0.89px;
+
+    text-decoration: none;
+    display: inline-flex;
+    box-sizing: border-box;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-radius: 10px;
+    border: solid 1px $primary;
+
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+
+    @include respond-to('xs') {
+        padding: 12px 10px;
+    }
+
+    &:focus,
+    &:active,
+    &:hover {
+        @include animate(all);
+        color: $white;
+        background-color: $primary;
+        outline: none;
+    }
+
+    .icon {
+        line-height: 1.5;
+        font-weight: 300;
+    }
+
+    .icon::before {
+        display: inline-block;
+        margin-right: 15px;
+        transform: rotate(-90deg);
+    }
+
+    &--submit {
+        font-family: 'OpenSans-Light';
+        cursor: pointer;
+        color: $white;
+        border: none;
+
+        &:focus,
+        &:active,
+        &:hover {
+            @include animate(all);
+            color: $white;
+            background-color: transparent;
+            outline: none;
+        }
+
+        @include respond-to('xs') {
+            padding: 12px 5px;
+        }
+    }
+
+    &--light {
+        color: $primary;
+        background-color: $white;
+        cursor: pointer;
+
+        &:focus,
+        &:active,
+        &:hover {
+            @include animate(all);
+            color: $white;
+            outline: none;
+            border: 1px solid $white;
+        }
+    }
+
+    &--dark {
+        color: $white;
+        background-color: $primary;
+        cursor: pointer;
+
+        &:focus,
+        &:active,
+        &:hover {
+            @include animate(all);
+            color: $white;
+            outline: none;
+            border: 1px solid $white;
+        }
+    }
+
+    &--transparent {
+        @include animate(all);
+        color: $white;
+        border-color: $white;
+        background-color: transparent;
+        cursor: pointer;
+
+        &:focus,
+        &:active,
+        &:hover {
+            @include animate(all);
+            color: $white;
+            outline: none;
+            border: 1px solid $white;
+        }
+    }
+}
+
+.btn {
+    .icon {
+        line-height: 1.5;
+        font-weight: 300;
+    }
+
+    .icon::before {
+        display: inline-block;
+        margin-right: 15px;
+        transform: rotate(-90deg);
+    }
+}

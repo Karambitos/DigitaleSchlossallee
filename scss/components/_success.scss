@@ -1,0 +1,107 @@
+.success-section {
+    @include animate (all);
+    position: fixed;
+    top: 108px;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: $bg;
+    width: 100%;
+    height: auto;
+    z-index: 1000;
+
+    opacity: 0;
+    pointer-events: none;
+
+    @include respond-to('medium') {
+        top: 78px;
+    }
+
+    @include respond-to('tablet') {
+        top: 0;
+    }
+
+    &--container {
+        position: relative;
+
+        max-width: 1290px;
+        padding: 85px 25px 158px;
+        margin: auto;
+        box-sizing: border-box;
+        overflow: hidden;
+
+    }
+
+    &--box {
+        max-width: 695px;
+        margin: auto;
+    }
+
+    &--title {
+        font-family: 'OpenSans-SemiBold';
+        color: $primary;
+        font-size: 28px;
+        line-height: normal;
+        letter-spacing: 1.56px;
+
+        @include respond-to('xs') {
+            font-size: 16px;
+        }
+    }
+
+    .success-close {
+        position: absolute;
+        border: none;
+        top: 110px;
+        right: 25px;
+        height: 38px;
+        width: 38px;
+        padding: 0;
+
+        @include respond-to('phone') {
+            top: 50px;
+        }
+
+        &:focus,
+        &:active,
+        &:hover {
+            cursor: pointer;
+            @include animate(all);
+            background-color: transparent;
+            outline: none;
+            transform: scale(1.2);
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            background-color: $dark;
+            box-sizing: border-box;
+            height: 2px;
+            width: 35px;
+            transform: rotate(135deg);
+            top: 15px;
+            right: 0;
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            background-color: $dark;
+            box-sizing: border-box;
+            height: 2px;
+            width: 35px;
+            transform: rotate(-135deg);
+            top: 15px;
+            right: 0;
+        }
+
+    }
+
+    &.active {
+        @include animate (all);
+        opacity: 1;
+        pointer-events: auto;
+        overflow: auto;
+    }
+}

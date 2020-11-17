@@ -1,0 +1,197 @@
+.animation .card-color-0 {
+    background-color: $primary;
+}
+
+.animation .card-color-1 {
+    background-color: $primary;
+}
+
+.animation .card-color-2 {
+    background-color: $primary;
+}
+
+.animation .card-color-3 {
+    background-color: $primary;
+}
+
+.popup-open {
+    overflow: hidden;
+}
+
+.animation .cover,
+.popup .cover {
+    position: fixed;
+    background: $primary;
+    margin: 0 0 15vh;
+    z-index: 100;
+    -webkit-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+}
+
+.animation .open-content,
+.popup .open-content {
+    width: 100%;
+    z-index: 110;
+    position: fixed;
+    opacity: 0;
+    height: 100vh;
+    margin: 0;
+    pointer-events: none;
+    overflow-y: auto;
+    top: 108px;
+
+    @media (max-width: 1024px) {
+        top: 0;
+    }
+}
+
+.animation .open-content .text,
+.popup .open-content .text {
+    background: #fff;
+    margin-top: 0;
+    max-width: 1220px;
+    margin: auto;
+    height: 100%;
+    display: none;
+}
+
+.animation .open-content .text.active,
+.popup .open-content .text.active {
+    display: block;
+}
+
+.animation .close-content,
+.popup .close-content {
+    display: block;
+    position: absolute;
+    right: 12px;
+    top: 50px;
+    width: 30px;
+    height: 30px;
+
+    @include respond-to('tablet') {
+        top: 20px;
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        background-color: $white;
+        box-sizing: border-box;
+        height: 2px;
+        width: 35px;
+        transform: rotate(135deg);
+        top: 15px;
+        right: 0;
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        background-color: $white;
+        box-sizing: border-box;
+        height: 2px;
+        width: 35px;
+        transform: rotate(-135deg);
+        top: 15px;
+        right: 0;
+    }
+}
+
+
+.animation .range--card {
+    -webkit-transition: opacity 200ms linear 320ms, -webkit-transform 200ms ease-out 320ms;
+    transition: opacity 200ms linear 320ms, -webkit-transform 200ms ease-out 320ms;
+    transition: opacity 200ms linear 320ms, transform 200ms ease-out 320ms;
+    transition: opacity 200ms linear 320ms, transform 200ms ease-out 320ms, -webkit-transform 200ms ease-out 320ms;
+}
+
+.animation .border {
+    -webkit-transition: opacity 200ms linear, -webkit-transform 200ms ease-out;
+    transition: opacity 200ms linear, -webkit-transform 200ms ease-out;
+    transition: opacity 200ms linear, transform 200ms ease-out;
+    transition: opacity 200ms linear, transform 200ms ease-out, -webkit-transform 200ms ease-out;
+}
+
+.animation .range--card img {
+    -webkit-transition: opacity 200ms linear 0ms, -webkit-transform 200ms ease-in 0ms;
+    transition: opacity 200ms linear 0ms, -webkit-transform 200ms ease-in 0ms;
+    transition: opacity 200ms linear 0ms, transform 200ms ease-in 0ms;
+    transition: opacity 200ms linear 0ms, transform 200ms ease-in 0ms, -webkit-transform 200ms ease-in 0ms;
+}
+
+.animation .range--card .range--title-box,
+.animation .range--card .range--content-box {
+    -webkit-transform: translate3d(0px, 0px, 0px);
+    transform: translate3d(0px, 0px, 0px);
+    -webkit-transition: opacity 200ms linear 120ms, -webkit-transform 200ms ease-in 120ms;
+    transition: opacity 200ms linear 120ms, -webkit-transform 200ms ease-in 120ms;
+    transition: opacity 200ms linear 120ms, transform 200ms ease-in 120ms;
+    transition: opacity 200ms linear 120ms, transform 200ms ease-in 120ms, -webkit-transform 200ms ease-in 120ms;
+}
+
+.animation .range--card.clicked img {
+    -webkit-transform: translate3d(0px, -40px, 0px);
+    transform: translate3d(0px, -40px, 0px);
+    opacity: 0;
+}
+
+.animation .range--card.clicked .border {
+    opacity: 0;
+    -webkit-transform: scale(1.3);
+    transform: scale(1.3);
+}
+
+.animation .range--card.out,
+.animation .range--card.out img {
+    -webkit-transform: translate3d(0px, -40px, 0px);
+    transform: translate3d(0px, -40px, 0px);
+    opacity: 0;
+}
+
+.animation .range--card.out .range--title-box,
+.animation .range--card.clicked .range--title-box,
+.animation .range--card.out .range--content-box,
+.animation .range--card.clicked .range--content-box {
+    -webkit-transform: translate3d(20%, -40px, 0px);
+    transform: translate3d(20%, -40px, 0px);
+    opacity: 0;
+}
+
+.animation .cover,
+.popup .cover {
+    -webkit-transition: -webkit-transform 300ms ease-in-out;
+    transition: -webkit-transform 300ms ease-in-out;
+    transition: transform 300ms ease-in-out;
+    transition: transform 300ms ease-in-out, -webkit-transform 300ms ease-in-out;
+}
+
+.animation .open-content,
+.popup .open-content {
+    -webkit-transition: opacity 200ms linear 0ms;
+    transition: opacity 200ms linear 0ms;
+}
+
+.animation .open-content.open,
+.popup .open-content.open {
+    opacity: 1;
+    pointer-events: all;
+    -webkit-transition-delay: 1000ms;
+    transition-delay: 1000ms;
+    background-color: $primary;
+}
+
+@media screen and (max-width: 600px) {
+    .animation .card-column {
+        width: 90%;
+    }
+
+    .animation .column-1 {
+        padding-top: 0px;
+    }
+
+    .animation .open-content img,
+    .popup .open-content img {
+        margin-top: 40px;
+    }
+}

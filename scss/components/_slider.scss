@@ -1,0 +1,118 @@
+.slider {
+    padding: 34px 0 70px;
+
+    &--title {
+        max-width: 525px;
+        margin: auto;
+        margin-bottom: 50px;
+
+        .sub-title {
+            line-height: normal;
+            font-size: 16px;
+        }
+
+        .title {
+            font-family: 'OpenSans-Bold';
+            font-size: 36px;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: normal;
+            letter-spacing: 2.01px;
+            color: $primary;
+
+            @include respond-to('tablet') {
+                font-size: 30px;
+            }
+
+            @include respond-to('xs') {
+                font-size: 18px;
+            }
+        }
+    }
+
+    &--box {
+        display: flex;
+        justify-content: flex-end;
+
+        @include respond-to('tablet') {
+            display: block;
+        }
+    }
+
+    .slider--box {
+
+        .swiper-container {
+            display: block;
+            width: 100%;
+            max-width: 365px;
+            height: 339px;
+            margin-right: 0;
+
+            @include respond-to('tablet') {
+                margin-right: auto;
+            }
+
+            .swiper-pagination-bullets {
+                bottom: 0;
+            }
+
+            .swiper-pagination-bullet-active {
+                background-color: $primary;
+            }
+        }
+
+        .swiper-slide {
+            width: 100%;
+            background-size: contain;
+            background-repeat: no-repeat;
+
+            img {
+                width: 100%;
+                border-radius: 10px;
+            }
+        }
+    }
+
+    .text {
+        box-sizing: border-box;
+        margin: 32px 37px 32px 54px;
+        max-width: 641px;
+
+        @include respond-to('tablet') {
+            max-width: inherit;
+            margin: 0;
+        }
+
+        .h4 {
+            font-family: 'OpenSans-Bold';
+            font-size: 16px;
+            margin: 35px 0;
+            color: $primary;
+        }
+
+        a {
+            font-family: 'OpenSans-SemiBold';
+            font-style: italic;
+        }
+    }
+}
+
+.slider--noslide {
+    padding: 69px 0 70px;
+
+    .slider--title {
+        margin-bottom: 0;
+    }
+
+    .title {
+        margin-bottom: 17px;
+    }
+
+    .text {
+        margin: 0 32px;
+
+        @include respond-to('phone') {
+            margin: 0;
+        }
+    }
+}
